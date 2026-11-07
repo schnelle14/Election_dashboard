@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:03:05.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:05:05.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -554,14 +554,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 93.9,
+   "percentCounted": 94.6,
    "status": "counting",
    "candidate": "Grant McCallum",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 7736
+   "margin": 7738
   },
   {
    "id": 35,
@@ -657,7 +657,7 @@
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 5806
+   "margin": 5506
   },
   {
    "id": 41,
@@ -826,14 +826,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 98.4,
+   "percentCounted": 98.6,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 492
+   "margin": 499
   },
   {
    "id": 70,
@@ -1002,7 +1002,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waitakere",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 96.7,
+   "percentCounted": 97.5,
    "status": "counting",
    "candidate": "Vanushi Walters",
    "party": "Labour",
@@ -1140,5 +1140,5 @@
    "margin": 10192
   }
  ],
- "scrapedAt": "2026-11-07T12:04:00Z"
+ "scrapedAt": "2026-11-07T12:06:00Z"
 }
