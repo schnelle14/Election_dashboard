@@ -1,11 +1,11 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results",
- "sourceUpdatedAt": "2026-11-07T12:47:50.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:51:05.000Z",
  "percentCounted": 99.5,
  "totalSeats": 131,
  "majority": 66,
  "overhangSeats": 11,
- "totalPartyVotes": 2414998,
+ "totalPartyVotes": 2415120,
  "parties": [
   {
    "id": 16,
@@ -13,7 +13,7 @@
    "short": "NAT",
    "colour": "#1E99EA",
    "seatingOrder": 100,
-   "partyVotes": 705747,
+   "partyVotes": 705750,
    "percentPartyVotes": 29.22,
    "percentPartyVotesChange": -8.86,
    "seatsElectorate": 42,
@@ -28,7 +28,7 @@
    "short": "LAB",
    "colour": "#EE2C3A",
    "seatingOrder": 10,
-   "partyVotes": 709187,
+   "partyVotes": 709246,
    "percentPartyVotes": 29.36,
    "percentPartyVotesChange": 2.4499999999999993,
    "seatsElectorate": 21,
@@ -43,7 +43,7 @@
    "short": "GRE",
    "colour": "#2BA53E",
    "seatingOrder": 20,
-   "partyVotes": 321455,
+   "partyVotes": 321491,
    "percentPartyVotes": 13.31,
    "percentPartyVotesChange": 1.7100000000000009,
    "seatsElectorate": 2,
@@ -73,7 +73,7 @@
    "short": "NZF",
    "colour": "#908F8F",
    "seatingOrder": 80,
-   "partyVotes": 236146,
+   "partyVotes": 236155,
    "percentPartyVotes": 9.77,
    "percentPartyVotesChange": 3.6899999999999995,
    "seatsElectorate": 0,
@@ -88,7 +88,7 @@
    "short": "OPP",
    "colour": "#00B9BC",
    "seatingOrder": 70,
-   "partyVotes": 144167,
+   "partyVotes": 144171,
    "percentPartyVotes": 5.96,
    "percentPartyVotesChange": 3.7399999999999998,
    "seatsElectorate": 0,
@@ -103,7 +103,7 @@
    "short": "TPM",
    "colour": "#A40808",
    "seatingOrder": 30,
-   "partyVotes": 13816,
+   "partyVotes": 13821,
    "percentPartyVotes": 0.57,
    "percentPartyVotesChange": -2.5100000000000002,
    "seatsElectorate": 5,
@@ -118,7 +118,7 @@
    "short": "ALC",
    "colour": "#BBBBBB",
    "seatingOrder": 50,
-   "partyVotes": 4816,
+   "partyVotes": 4818,
    "percentPartyVotes": 0.19,
    "percentPartyVotesChange": -0.26,
    "seatsElectorate": 0,
@@ -223,7 +223,7 @@
    "short": "TTT",
    "colour": "#71472F",
    "seatingOrder": 40,
-   "partyVotes": 1209,
+   "partyVotes": 1213,
    "percentPartyVotes": 0.05,
    "percentPartyVotesChange": null,
    "seatsElectorate": 0,
@@ -263,5 +263,5 @@
    "isShownByDefault": false
   }
  ],
- "scrapedAt": "2026-11-07T12:50:00Z"
+ "scrapedAt": "2026-11-07T12:52:00Z"
 }

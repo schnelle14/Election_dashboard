@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:47:50.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:51:05.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -378,14 +378,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/manurewa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 92.9,
+   "percentCounted": 93.9,
    "status": "counting",
    "candidate": "Arena Williams",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 10838
+   "margin": 10844
   },
   {
    "id": 24,
@@ -554,14 +554,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 95.9,
+   "percentCounted": 96.6,
    "status": "counting",
    "candidate": "Grant McCallum",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 7729
+   "margin": 7731
   },
   {
    "id": 35,
@@ -826,14 +826,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 99.1,
+   "percentCounted": 99.3,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 450
+   "margin": 443
   },
   {
    "id": 70,
@@ -1140,5 +1140,5 @@
    "margin": 10522
   }
  ],
- "scrapedAt": "2026-11-07T12:49:59Z"
+ "scrapedAt": "2026-11-07T12:52:00Z"
 }
