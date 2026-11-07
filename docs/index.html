@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NZ Electorate Results</title>
+  <meta name="description" content="Live NZ Election 2026 electorate results from RNZ, refreshed every 2 minutes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div>
+        <p class="eyebrow">NZ Election 2026 · Electorate vote</p>
+        <h1>Who's leading in each electorate</h1>
+      </div>
+      <div class="status" aria-live="polite">
+        <span class="dot" id="live-dot" aria-hidden="true"></span>
+        <span id="status-text">Loading…</span>
+        <button type="button" id="refresh-btn" class="btn">Refresh now</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="meta" id="meta"></p>
+    <div class="error" id="error" role="alert" hidden></div>
+
+    <section class="tiles" aria-label="Summary">
+      <div class="tile"><p class="tile-label">Electorates</p><p class="tile-value" id="t-count">–</p><p class="tile-sub" id="t-count-sub"></p></div>
+      <div class="tile"><p class="tile-label">Average counted</p><p class="tile-value" id="t-avg">–</p><p class="tile-sub" id="t-avg-sub"></p></div>
+      <div class="tile"><p class="tile-label">Close races</p><p class="tile-value" id="t-close">–</p><p class="tile-sub">margin under 1,000 votes</p></div>
+      <div class="tile"><p class="tile-label">Closest race</p><p class="tile-value tile-value-sm" id="t-closest">–</p><p class="tile-sub" id="t-closest-sub"></p></div>
+    </section>
+
+    <section class="card" aria-labelledby="seats-h">
+      <div class="card-head">
+        <h2 id="seats-h">Electorates led or won, by party</h2>
+        <p class="card-sub">Electorate seats only. The party vote decides overall seat numbers in Parliament.</p>
+      </div>
+      <div class="bars" id="party-bars" role="list"></div>
+    </section>
+
+    <section class="card" aria-labelledby="table-h">
+      <div class="card-head">
+        <h2 id="table-h">All electorates</h2>
+      </div>
+      <div class="filters">
+        <label class="search">
+          <span class="sr-only">Search electorate or candidate</span>
+          <input type="search" id="search" placeholder="Search electorate or candidate" autocomplete="off">
+        </label>
+        <label class="select">
+          <span class="sr-only">Filter by leading party</span>
+          <select id="party-filter"><option value="">All parties</option></select>
+        </label>
+        <div class="seg" role="radiogroup" aria-label="Show">
+          <button type="button" role="radio" aria-checked="true" data-view="all">All</button>
+          <button type="button" role="radio" aria-checked="false" data-view="key">Key</button>
+          <button type="button" role="radio" aria-checked="false" data-view="maori">Māori</button>
+          <button type="button" role="radio" aria-checked="false" data-view="close">Close</button>
+        </div>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+      <div class="table-scroll">
+        <table class="results">
+          <thead>
+            <tr>
+              <th scope="col"><button type="button" class="sort" data-sort="name">Electorate</button></th>
+              <th scope="col" class="col-counted"><button type="button" class="sort" data-sort="percentCounted">Counted</button></th>
+              <th scope="col"><button type="button" class="sort" data-sort="party">Leading</button></th>
+              <th scope="col" class="num"><button type="button" class="sort" data-sort="margin">Margin</button></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="foot">
+      Data: <a href="https://www.rnz.co.nz/news/election-2026-results/electorates" rel="noopener">RNZ Election 2026 results</a>.
+      Collected every 2 minutes by a GitHub Action; this page checks for new data every 2 minutes.
+      Unofficial: confirm with the Electoral Commission.
+    </footer>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
