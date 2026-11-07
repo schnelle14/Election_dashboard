@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T10:37:31.000Z",
+ "sourceUpdatedAt": "2026-11-07T10:39:16.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -10,14 +10,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/auckland-central",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 85.6,
+   "percentCounted": 86.5,
    "status": "counting",
    "candidate": "Chlöe Swarbrick",
    "party": "Greens",
    "partyShort": "GRE",
    "colour": "#2BA53E",
    "isIndependent": false,
-   "margin": 2751
+   "margin": 2754
   },
   {
    "id": 2,
@@ -26,7 +26,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/banks-peninsula",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.3,
+   "percentCounted": 99.2,
    "status": "counting",
    "candidate": "Tracey McLellan",
    "party": "Labour",
@@ -42,14 +42,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/botany",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 89.7,
+   "percentCounted": 92.3,
    "status": "counting",
    "candidate": "Christopher Luxon",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 12964
+   "margin": 13045
   },
   {
    "id": 4,
@@ -154,14 +154,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/epsom",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 82.4,
+   "percentCounted": 84.3,
    "status": "counting",
    "candidate": "David Seymour",
    "party": "ACT",
    "partyShort": "ACT",
    "colour": "#EE2796",
    "isIndependent": false,
-   "margin": 1811
+   "margin": 1884
   },
   {
    "id": 11,
@@ -218,14 +218,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hauraki-waikato",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 93.6,
+   "percentCounted": 93.9,
    "status": "counting",
    "candidate": "Hana-Rawhiti Maipi-Clarke",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 10202
+   "margin": 10215
   },
   {
    "id": 14,
@@ -234,7 +234,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/henderson",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 81.4,
+   "percentCounted": 82.6,
    "status": "counting",
    "candidate": "Phil Twyford",
    "party": "Labour",
@@ -266,14 +266,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/ikaroa-rawhiti",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 92.2,
+   "percentCounted": 92.8,
    "status": "counting",
    "candidate": "Cushla Tangaere-Manuel",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 2640
+   "margin": 2646
   },
   {
    "id": 16,
@@ -298,8 +298,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/invercargill",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 99.1,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Penny Simmonds",
    "party": "National",
    "partyShort": "NAT",
@@ -410,14 +410,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/mt-albert",
    "isKey": true,
    "isMaori": false,
-   "percentCounted": 79.4,
+   "percentCounted": 80.4,
    "status": "counting",
    "candidate": "Helen White",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 3761
+   "margin": 3752
   },
   {
    "id": 26,
@@ -442,14 +442,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/mt-roskill",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 80.0,
+   "percentCounted": 82.0,
    "status": "counting",
    "candidate": "Michael Wood",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 304
+   "margin": 285
   },
   {
    "id": 22,
@@ -554,14 +554,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 85.0,
+   "percentCounted": 85.7,
    "status": "counting",
    "candidate": "Grant McCallum",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 7508
+   "margin": 7526
   },
   {
    "id": 35,
@@ -650,14 +650,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/rangitikei",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 92.9,
+   "percentCounted": 93.9,
    "status": "counting",
    "candidate": "Suze Redmayne",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 5399
+   "margin": 5418
   },
   {
    "id": 41,
@@ -762,14 +762,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/taranaki-king-country",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.1,
+   "percentCounted": 97.7,
    "status": "counting",
    "candidate": "Barbara Kuriger",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 11858
+   "margin": 11861
   },
   {
    "id": 49,
@@ -810,14 +810,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-hauauru",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 95.9,
+   "percentCounted": 96.1,
    "status": "counting",
    "candidate": "Debbie Ngarewa-Packer",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 3787
+   "margin": 3792
   },
   {
    "id": 69,
@@ -890,14 +890,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki-makaurau",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 88.2,
+   "percentCounted": 88.4,
    "status": "counting",
    "candidate": "Oriini Kaipara",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 6676
+   "margin": 6685
   },
   {
    "id": 52,
@@ -922,14 +922,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waiariki",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 98.4,
+   "percentCounted": 98.8,
    "status": "counting",
    "candidate": "Rawiri Waititi",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 2246
+   "margin": 2265
   },
   {
    "id": 53,
@@ -970,14 +970,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/wairarapa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 89.4,
+   "percentCounted": 90.6,
    "status": "counting",
-   "candidate": "Mike Butterick",
-   "party": "National",
-   "partyShort": "NAT",
-   "colour": "#1E99EA",
+   "candidate": "Kieran McAnulty",
+   "party": "Labour",
+   "partyShort": "LAB",
+   "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 153
+   "margin": 68
   },
   {
    "id": 57,
@@ -1002,14 +1002,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waitakere",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 82.8,
+   "percentCounted": 83.6,
    "status": "counting",
    "candidate": "Vanushi Walters",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 2555
+   "margin": 2553
   },
   {
    "id": 58,
@@ -1130,15 +1130,15 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/otahuhu",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 82.4,
+   "percentCounted": 84.6,
    "status": "counting",
    "candidate": "Jenny Salesa",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 9430
+   "margin": 9531
   }
  ],
- "scrapedAt": "2026-11-07T10:37:58Z"
+ "scrapedAt": "2026-11-07T10:39:58Z"
 }
