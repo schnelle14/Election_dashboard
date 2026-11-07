@@ -1,7 +1,7 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results",
- "sourceUpdatedAt": "2026-11-07T12:51:36.000Z",
- "percentCounted": 99.5,
+ "sourceUpdatedAt": "2026-11-07T12:55:20.000Z",
+ "percentCounted": 99.6,
  "totalSeats": 131,
  "majority": 66,
  "overhangSeats": 11,
@@ -263,5 +263,5 @@
    "isShownByDefault": false
   }
  ],
- "scrapedAt": "2026-11-07T12:54:00Z"
+ "scrapedAt": "2026-11-07T12:56:00Z"
 }
