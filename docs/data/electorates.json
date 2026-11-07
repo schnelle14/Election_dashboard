@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:08:50.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:09:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -746,14 +746,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/takanini",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 96.2,
+   "percentCounted": 97.1,
    "status": "counting",
    "candidate": "Rima Nakhle",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1487
+   "margin": 1484
   },
   {
    "id": 48,
@@ -1140,5 +1140,5 @@
    "margin": 10498
   }
  ],
- "scrapedAt": "2026-11-07T12:09:59Z"
+ "scrapedAt": "2026-11-07T12:11:59Z"
 }
