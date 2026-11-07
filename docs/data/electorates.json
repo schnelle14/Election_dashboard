@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:46:50.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:47:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -826,14 +826,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 98.9,
+   "percentCounted": 99.1,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 451
+   "margin": 450
   },
   {
    "id": 70,
@@ -1140,5 +1140,5 @@
    "margin": 10522
   }
  ],
- "scrapedAt": "2026-11-07T12:47:59Z"
+ "scrapedAt": "2026-11-07T12:49:59Z"
 }
