@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:05:05.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:07:05.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -202,14 +202,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hamilton-west",
    "isKey": true,
    "isMaori": false,
-   "percentCounted": 98.8,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Tama Potaka",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 2210
+   "margin": 2181
   },
   {
    "id": 65,
@@ -378,14 +378,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/manurewa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 88.9,
+   "percentCounted": 89.9,
    "status": "counting",
    "candidate": "Arena Williams",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 10331
+   "margin": 10518
   },
   {
    "id": 24,
@@ -394,7 +394,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/maungakiekie",
    "isKey": true,
    "isMaori": false,
-   "percentCounted": 96.3,
+   "percentCounted": 97.5,
    "status": "counting",
    "candidate": "Greg Fleming",
    "party": "National",
@@ -1140,5 +1140,5 @@
    "margin": 10192
   }
  ],
- "scrapedAt": "2026-11-07T12:06:00Z"
+ "scrapedAt": "2026-11-07T12:08:00Z"
 }
