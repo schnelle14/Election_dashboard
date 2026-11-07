@@ -6,7 +6,13 @@ A self-updating dashboard of the electorate results published by RNZ at
 - **Leading candidate and margin** for all 71 electorates
 - **Party summary**: electorates led or won, by party (click a bar to filter the table)
 - **% of votes counted** per electorate, plus summary tiles (average counted, close races, closest race)
-- **Search and filters**: by electorate or candidate name, by party, or All / Key / Māori / Close (< 1,000 votes)
+- **Search and filters**: by electorate or candidate name, by party, or All / Key / Māori / Close
+- **Close races** scale with the count: a lead is *close* if it is under
+  `300 + 5% × votes still to count` (assuming ~35,000 votes per electorate),
+  so about 2,050 votes at 0% counted, 1,175 at 50%, and 300 at 100% (an
+  allowance for special votes counted later). Tune `CLOSE_SWING`,
+  `CLOSE_FLOOR` and `EST_VOTES_PER_ELECTORATE` in `docs/app.js`.
+- **Key** electorates are RNZ's own selection of seats to watch
 - Highlights rows that changed since the last refresh and tags electorates whose leading party changed while the page was open
 
 ## How it works
