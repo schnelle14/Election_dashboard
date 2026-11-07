@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:09:21.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:10:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -458,8 +458,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/mangere",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.6,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Lydia Sosene",
    "party": "Labour",
    "partyShort": "LAB",
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:10:00Z"
+ "scrapedAt": "2026-11-07T13:12:00Z"
 }
