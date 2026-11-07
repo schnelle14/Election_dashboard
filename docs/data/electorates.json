@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:13:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:14:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -378,8 +378,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/manurewa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 99.0,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Arena Williams",
    "party": "Labour",
    "partyShort": "LAB",
@@ -602,8 +602,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/papakura",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.9,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Emma Chatterton",
    "party": "National",
    "partyShort": "NAT",
@@ -618,14 +618,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/port-waikato",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 99.0,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Matthew Paul",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 10433
+   "margin": 10437
   },
   {
    "id": 39,
@@ -1082,14 +1082,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/whangaparaoa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.6,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Mark Mitchell",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 15365
+   "margin": 15368
   },
   {
    "id": 63,
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:14:00Z"
+ "scrapedAt": "2026-11-07T13:16:00Z"
 }
