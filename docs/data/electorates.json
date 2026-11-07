@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T07:20:45.000Z",
+ "sourceUpdatedAt": "2026-11-07T07:22:45.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -186,14 +186,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hamilton-east",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 33.3,
+   "percentCounted": 34.7,
    "status": "counting",
-   "candidate": "Georgie Dansey",
-   "party": "Labour",
-   "partyShort": "LAB",
-   "colour": "#EE2C3A",
+   "candidate": "Ryan Hamilton",
+   "party": "National",
+   "partyShort": "NAT",
+   "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 140
+   "margin": 38
   },
   {
    "id": 13,
@@ -250,14 +250,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hutt-south",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 32.5,
+   "percentCounted": 33.8,
    "status": "counting",
    "candidate": "Ginny Andersen",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 461
+   "margin": 581
   },
   {
    "id": 66,
@@ -282,14 +282,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/ilam",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 22.2,
+   "percentCounted": 23.3,
    "status": "counting",
    "candidate": "Hamish Campbell",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1972
+   "margin": 1982
   },
   {
    "id": 17,
@@ -353,7 +353,7 @@
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1634
+   "margin": 1633
   },
   {
    "id": 21,
@@ -362,14 +362,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/kenepuru",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 24.6,
+   "percentCounted": 26.2,
    "status": "counting",
    "candidate": "Barbara Edmonds",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 3622
+   "margin": 4213
   },
   {
    "id": 23,
@@ -618,14 +618,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/port-waikato",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 26.3,
+   "percentCounted": 27.3,
    "status": "counting",
    "candidate": "Matthew Paul",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 4704
+   "margin": 4854
   },
   {
    "id": 39,
@@ -666,14 +666,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/remutaka",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 25.8,
+   "percentCounted": 27.3,
    "status": "counting",
    "candidate": "Chris Hipkins",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 8124
+   "margin": 8220
   },
   {
    "id": 42,
@@ -714,14 +714,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/southland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 33.0,
+   "percentCounted": 33.9,
    "status": "counting",
    "candidate": "Joseph Mooney",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 6569
+   "margin": 6656
   },
   {
    "id": 45,
@@ -762,14 +762,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/taranaki-king-country",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 22.2,
+   "percentCounted": 24.6,
    "status": "counting",
    "candidate": "Barbara Kuriger",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 3917
+   "margin": 4441
   },
   {
    "id": 49,
@@ -810,14 +810,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-hauauru",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 20.0,
+   "percentCounted": 20.3,
    "status": "counting",
    "candidate": "Debbie Ngarewa-Packer",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 2069
+   "margin": 2084
   },
   {
    "id": 69,
@@ -826,14 +826,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 16.6,
+   "percentCounted": 17.5,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 521
+   "margin": 518
   },
   {
    "id": 70,
@@ -890,14 +890,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki-makaurau",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 23.1,
+   "percentCounted": 23.3,
    "status": "counting",
    "candidate": "Oriini Kaipara",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 3604
+   "margin": 3623
   },
   {
    "id": 52,
@@ -938,14 +938,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waikato",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 27.0,
+   "percentCounted": 27.9,
    "status": "counting",
    "candidate": "Tim van de Molen",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 6985
+   "margin": 7020
   },
   {
    "id": 54,
@@ -1082,14 +1082,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/whangaparaoa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 44.6,
+   "percentCounted": 45.9,
    "status": "counting",
    "candidate": "Mark Mitchell",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 11853
+   "margin": 11927
   },
   {
    "id": 63,
@@ -1140,5 +1140,5 @@
    "margin": 7170
   }
  ],
- "scrapedAt": "2026-11-07T07:21:12Z"
+ "scrapedAt": "2026-11-07T07:23:12Z"
 }
