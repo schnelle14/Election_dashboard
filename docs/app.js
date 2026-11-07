@@ -155,22 +155,34 @@
     const map = new Map();
     for (const e of state.data.electorates) {
       const name = partyName(e);
-      if (!map.has(name)) map.set(name, { name, colour: e.colour, count: 0, maori: 0, close: 0 });
+      if (!map.has(name)) map.set(name, { name, colour: e.colour, count: 0, maori: 0, close: 0, done: 0 });
       const p = map.get(name);
       p.count++;
       if (e.isMaori) p.maori++;
+      if (e.percentCounted >= 100) p.done++;
       if (isClose(e)) p.close++;
     }
     return [...map.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
   }
 
+  // Heading follows the count: "led" until an electorate is fully counted,
+  // "won" once every electorate is, "led or won" in between.
+  function barsHeading() {
+    const list = state.data.electorates;
+    const done = list.filter((e) => e.percentCounted >= 100).length;
+    if (done === 0) return "Electorates led, by party";
+    if (done === list.length) return "Electorates won, by party";
+    return "Electorates led or won, by party";
+  }
+
   function renderBars() {
     const stats = partyStats();
+    $("seats-h").textContent = barsHeading();
     const max = Math.max(1, ...stats.map((p) => p.count));
     const el = $("party-bars");
     el.innerHTML = stats.map((p) => `
       <div class="bar-row" role="listitem" tabindex="0" data-party="${esc(p.name)}"
-           aria-label="${esc(p.name)}: leading in ${p.count} electorates">
+           aria-label="${esc(p.name)}: ${p.count} electorates, ${p.done} fully counted">
         <span class="bar-label"><span class="swatch" style="background:${esc(p.colour)}"></span>${esc(p.name)}</span>
         <span class="bar-track"><span class="bar-fill" style="width:${(p.count / max) * 100}%;background:${esc(p.colour)}"></span></span>
         <span class="bar-value">${p.count}</span>
@@ -178,7 +190,7 @@
     el.querySelectorAll(".bar-row").forEach((row) => {
       const p = stats.find((s) => s.name === row.dataset.party);
       const html = `<strong>${esc(p.name)}</strong>
-        <div class="tt-row">Leading in ${p.count} electorate${p.count === 1 ? "" : "s"}</div>
+        <div class="tt-row">${[p.done ? `Won ${p.done}` : "", p.count - p.done ? `${p.done ? "leading" : "Leading"} in ${p.count - p.done}` : ""].filter(Boolean).join(" · ")} electorate${p.count === 1 ? "" : "s"}</div>
         <div class="tt-row">${p.count - p.maori} general · ${p.maori} Māori</div>
         <div class="tt-row">${p.close} in close race${p.close === 1 ? "" : "s"}</div>
         <div class="tt-row" style="margin-top:4px">Click to filter the table</div>`;
