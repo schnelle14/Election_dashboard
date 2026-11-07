@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:21:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:23:20.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -554,14 +554,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.6,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Grant McCallum",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 7931
+   "margin": 7942
   },
   {
    "id": 35,
@@ -826,8 +826,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 99.5,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:22:00Z"
+ "scrapedAt": "2026-11-07T13:23:59Z"
 }
