@@ -3,7 +3,15 @@
 
   const DATA_URL = "data/electorates.json";
   const REFRESH_MS = 2 * 60 * 1000;
-  const CLOSE_MARGIN = 1000;
+  // "Close" depends on how much is left to count: a lead is close if the
+  // runner-up could overturn it by winning the uncounted votes by CLOSE_SWING
+  // more than the leader, plus a floor for special votes counted later.
+  const EST_VOTES_PER_ELECTORATE = 35000; // rough: ~45k enrolled x ~78% turnout
+  const CLOSE_SWING = 0.05;
+  const CLOSE_FLOOR = 300;
+  const closeThreshold = (e) => Math.round(
+    CLOSE_FLOOR + CLOSE_SWING * EST_VOTES_PER_ELECTORATE * (1 - Math.min(100, Math.max(0, e.percentCounted)) / 100));
+  const isClose = (e) => e.margin != null && e.margin < closeThreshold(e);
   const STALE_MS = 10 * 60 * 1000;
 
   const $ = (id) => document.getElementById(id);
@@ -128,7 +136,7 @@
     const avg = n ? list.reduce((a, e) => a + e.percentCounted, 0) / n : 0;
     const done = list.filter((e) => e.percentCounted >= 100).length;
     const withMargin = list.filter((e) => e.margin != null);
-    const close = withMargin.filter((e) => e.margin < CLOSE_MARGIN);
+    const close = withMargin.filter(isClose);
     const closest = withMargin.slice().sort((a, b) => a.margin - b.margin)[0];
 
     $("t-count").textContent = n;
@@ -151,7 +159,7 @@
       const p = map.get(name);
       p.count++;
       if (e.isMaori) p.maori++;
-      if (e.margin != null && e.margin < CLOSE_MARGIN) p.close++;
+      if (isClose(e)) p.close++;
     }
     return [...map.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
   }
@@ -172,7 +180,7 @@
       const html = `<strong>${esc(p.name)}</strong>
         <div class="tt-row">Leading in ${p.count} electorate${p.count === 1 ? "" : "s"}</div>
         <div class="tt-row">${p.count - p.maori} general · ${p.maori} Māori</div>
-        <div class="tt-row">${p.close} with margin under ${fmt.format(CLOSE_MARGIN)}</div>
+        <div class="tt-row">${p.close} in close race${p.close === 1 ? "" : "s"}</div>
         <div class="tt-row" style="margin-top:4px">Click to filter the table</div>`;
       bindTooltip(row, html);
       row.addEventListener("click", () => setParty(p.name));
@@ -193,7 +201,7 @@
     return state.data.electorates.filter((e) => {
       if (state.view === "key" && !e.isKey) return false;
       if (state.view === "maori" && !e.isMaori) return false;
-      if (state.view === "close" && !(e.margin != null && e.margin < CLOSE_MARGIN)) return false;
+      if (state.view === "close" && !isClose(e)) return false;
       if (state.party && partyName(e) !== state.party) return false;
       if (q && !(`${e.name} ${e.candidate} ${partyName(e)}`.toLowerCase().includes(q))) return false;
       return true;
@@ -229,7 +237,7 @@
     }
     $("rows").innerHTML = list.map((e) => {
       const pct = Math.max(0, Math.min(100, e.percentCounted));
-      const close = e.margin != null && e.margin < CLOSE_MARGIN;
+      const close = isClose(e);
       const tags = [
         e.isKey ? `<span class="tag">Key</span>` : "",
         e.isMaori ? `<span class="tag">Māori</span>` : "",
@@ -243,7 +251,7 @@
           <span class="counted-pct">${pct.toFixed(1)}%</span></div></td>
         <td><div class="lead"><span class="swatch" style="background:${esc(e.colour)}"></span>
           <div><div class="lead-cand">${esc(e.candidate || "—")}</div><div class="lead-party">${esc(partyName(e))}</div></div></div></td>
-        <td class="num"><span class="margin${close ? " close" : ""}">${close ? `<span class="close-mark">CLOSE</span>` : ""}${e.margin != null ? fmt.format(e.margin) : "—"}</span></td>
+        <td class="num"><span class="margin${close ? " close" : ""}">${close ? `<span class="close-mark" title="Close: lead under ${fmt.format(closeThreshold(e))} votes at ${pct.toFixed(1)}% counted">CLOSE</span>` : ""}${e.margin != null ? fmt.format(e.margin) : "—"}</span></td>
       </tr>`;
     }).join("");
   }
