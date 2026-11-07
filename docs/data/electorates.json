@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:37:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:37:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -874,14 +874,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.5,
+   "percentCounted": 98.8,
    "status": "counting",
    "candidate": "Mahesh Muralidhar",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 5342
+   "margin": 5345
   },
   {
    "id": 67,
@@ -1140,5 +1140,5 @@
    "margin": 10498
   }
  ],
- "scrapedAt": "2026-11-07T12:37:59Z"
+ "scrapedAt": "2026-11-07T12:39:59Z"
 }
