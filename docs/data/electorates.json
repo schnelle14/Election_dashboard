@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:00:05.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:03:20.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -378,7 +378,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/manurewa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 96.0,
+   "percentCounted": 97.0,
    "status": "counting",
    "candidate": "Arena Williams",
    "party": "Labour",
@@ -890,7 +890,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki-makaurau",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 99.4,
+   "percentCounted": 99.8,
    "status": "counting",
    "candidate": "Oriini Kaipara",
    "party": "Te Pāti Māori",
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:01:59Z"
+ "scrapedAt": "2026-11-07T13:03:59Z"
 }
