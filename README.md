@@ -3,6 +3,8 @@
 A self-updating dashboard of the electorate results published by RNZ at
 <https://www.rnz.co.nz/news/election-2026-results/electorates>.
 
+- **Seats in Parliament**: projected seats per party from the party vote (electorate + list),
+  a seat strip with the majority line, outgoing government vs opposition blocs, and party-vote %
 - **Leading candidate and margin** for all 71 electorates
 - **Party summary**: electorates led or won, by party (click a bar to filter the table)
 - **% of votes counted** per electorate, plus summary tiles (average counted, close races, closest race)
@@ -18,12 +20,14 @@ A self-updating dashboard of the electorate results published by RNZ at
 ## How it works
 
 ```
-RNZ page ──(every 2 min)──> GitHub Action ──commit──> docs/data/electorates.json ──> GitHub Pages (docs/)
+RNZ pages ─(every 2 min)─> GitHub Action ──commit──> docs/data/*.json ──────────> GitHub Pages (docs/)
                             scraper/scrape.py                                       page re-checks every 2 min
 ```
 
-- `scraper/scrape.py` downloads the RNZ page and reads the structured data that
-  RNZ's Next.js page embeds. If that format changes, it falls back to parsing
+- `scraper/scrape.py` downloads two RNZ pages, the electorates page
+  (→ `docs/data/electorates.json`) and the results front page with party vote
+  and projected seats (→ `docs/data/parliament.json`), and reads the
+  structured data that RNZ's Next.js pages embed. If that format changes, it falls back to parsing
   the HTML table. It uses only the Python standard library. It refuses to
   overwrite good data with a partial scrape (fewer than 60 electorates).
 - `scraper/run_loop.sh` runs the scraper every 2 minutes and commits only when

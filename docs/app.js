@@ -2,6 +2,13 @@
   "use strict";
 
   const DATA_URL = "data/electorates.json";
+  const PARL_URL = "data/parliament.json";
+  // Blocs = the outgoing (2023-26) government and the opposition parties in
+  // that Parliament. Not a prediction of coalitions.
+  const BLOCS = [
+    { name: "Outgoing government", parties: ["National", "ACT", "NZ First"] },
+    { name: "Outgoing opposition", parties: ["Labour", "Greens", "Te Pāti Māori"] },
+  ];
   const REFRESH_MS = 2 * 60 * 1000;
   // "Close" depends on how much is left to count: a lead is close if the
   // runner-up could overturn it by winning the uncounted votes by CLOSE_SWING
@@ -22,6 +29,7 @@
 
   const state = {
     data: null,
+    parl: null,
     prevLeaders: null,      // slug -> party, from the previous fetch
     flipped: new Set(),     // slugs whose leading party changed since page load
     changedSlugs: new Set(),
@@ -67,6 +75,7 @@
       ingest(data);
       state.lastFetchOk = Date.now();
       $("error").hidden = true;
+      await loadParliament();
     } catch (err) {
       $("error").hidden = false;
       $("error").textContent = state.data
@@ -77,6 +86,21 @@
       state.nextRefreshAt = Date.now() + REFRESH_MS;
       if (manual) btn.blur();
       renderStatus();
+    }
+  }
+
+  // Seats in Parliament come from a second file. A failure here must not
+  // take down the electorate view, so it is handled on its own.
+  async function loadParliament() {
+    try {
+      const res = await fetch(`${PARL_URL}?t=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const parl = await res.json();
+      if (!Array.isArray(parl.parties)) throw new Error("unexpected data format");
+      state.parl = parl;
+      renderParliament();
+    } catch (err) {
+      if (!state.parl) $("parl-sub").textContent = `Seat projection unavailable right now (${err.message}).`;
     }
   }
 
@@ -107,6 +131,78 @@
     renderBars();
     renderPartyFilter();
     renderTable();
+  }
+
+  function signed(n, digits = 0) {
+    if (n == null || Number.isNaN(n)) return "—";
+    const v = Number(n);
+    const abs = Math.abs(v).toFixed(digits);
+    return v > 0 ? `+${abs}` : v < 0 ? `−${abs}` : (0).toFixed(digits);
+  }
+
+  function renderParliament() {
+    const P = state.parl;
+    const total = P.totalSeats;
+    const seated = P.parties.filter((p) => p.seatsTotal > 0);
+    const byName = Object.fromEntries(P.parties.map((p) => [p.name, p]));
+    const updated = P.sourceUpdatedAt ? ` · updated ${timeFmt.format(new Date(P.sourceUpdatedAt))}` : "";
+    $("parl-sub").textContent =
+      `Projected from the party vote (${P.percentCounted ?? "?"}% counted) · ${total} seats` +
+      `${P.overhangSeats ? ` including ${P.overhangSeats} overhang` : ""} · ${P.majority} needed to govern${updated}`;
+    $("house-mid-label").textContent = `${P.majority} for a majority`;
+
+    // Seat strip in RNZ's seating order (left to right).
+    const ordered = seated.slice().sort((a, b) => (a.seatingOrder ?? 999) - (b.seatingOrder ?? 999) || a.name.localeCompare(b.name));
+    const house = $("house");
+    house.innerHTML = ordered.map((p) => `<div class="house-seg" role="listitem" tabindex="0" data-party="${esc(p.name)}"
+        style="width:${(p.seatsTotal / total) * 100}%;background:${esc(p.colour)}"
+        aria-label="${esc(p.name)}: ${p.seatsTotal} seats"></div>`).join("");
+    $("house-key").innerHTML = ordered.map((p) =>
+      `<span><span class="swatch" style="background:${esc(p.colour)}"></span>${esc(p.name)} <strong>${p.seatsTotal}</strong></span>`).join("");
+    house.querySelectorAll(".house-seg").forEach((seg) => {
+      const p = byName[seg.dataset.party];
+      bindTooltip(seg, `<strong>${esc(p.name)} · ${p.seatsTotal} seats</strong>
+        <div class="tt-row">${p.seatsElectorate} electorate + ${p.seatsList} list</div>
+        <div class="tt-row">${p.percentPartyVotes.toFixed(1)}% of the party vote</div>
+        <div class="tt-row">${signed(p.seatsChange)} seats vs 2023</div>`);
+    });
+
+    // Blocs vs the majority line.
+    const scaleMax = Math.max(P.majority * 1.25, ...BLOCS.map((b) => b.parties.reduce((a, n) => a + (byName[n]?.seatsTotal || 0), 0)));
+    const inBloc = new Set(BLOCS.flatMap((b) => b.parties));
+    const others = seated.filter((p) => !inBloc.has(p.name));
+    $("blocs").innerHTML = BLOCS.map((b) => {
+      const members = b.parties.map((n) => byName[n]).filter(Boolean);
+      const seats = members.reduce((a, p) => a + p.seatsTotal, 0);
+      const diff = seats - P.majority;
+      const verdict = diff > 0 ? `majority, ${diff} to spare` : diff === 0 ? "bare majority" : `${-diff} short of a majority`;
+      return `<div class="bloc">
+        <div class="bloc-head">
+          <span><span class="bloc-name">${esc(b.name)}</span> <span class="bloc-parties">${esc(b.parties.join(" + "))}</span></span>
+          <span class="bloc-total"><strong>${seats}</strong> seats · ${verdict}</span>
+        </div>
+        <div class="bloc-track" role="img" aria-label="${esc(b.name)}: ${seats} seats, ${verdict}">
+          ${members.filter((p) => p.seatsTotal > 0).map((p) => `<span class="bloc-seg" style="width:${(p.seatsTotal / scaleMax) * 100}%;background:${esc(p.colour)}"></span>`).join("")}
+          <span class="bloc-line" style="left:${(P.majority / scaleMax) * 100}%"></span>
+        </div>
+      </div>`;
+    }).join("") + (others.length
+      ? `<p class="bloc-others">Not in either bloc: ${others.map((p) => `${esc(p.name)} ${p.seatsTotal}`).join(", ")}</p>` : "");
+
+    // Party table: parties with seats or shown by default, then the rest summed.
+    const shown = P.parties.filter((p) => p.seatsTotal > 0 || p.isShownByDefault);
+    const rest = P.parties.filter((p) => !shown.includes(p));
+    const restPct = rest.reduce((a, p) => a + p.percentPartyVotes, 0);
+    $("parl-rows").innerHTML = shown.map((p) => `<tr class="${p.seatsTotal ? "" : "muted"}">
+        <td><span class="p-name"><span class="swatch" style="background:${esc(p.colour)}"></span>${esc(p.name)}</span></td>
+        <td class="num">${p.percentPartyVotes.toFixed(1)}% <span class="chg">${signed(p.percentPartyVotesChange, 1)}</span></td>
+        <td class="num col-detail">${p.seatsElectorate}</td>
+        <td class="num col-detail">${p.seatsList}</td>
+        <td class="num p-total">${p.seatsTotal}</td>
+        <td class="num chg">${signed(p.seatsChange)}</td>
+      </tr>`).join("") + (rest.length ? `<tr class="muted">
+        <td>Other parties (${rest.length})</td><td class="num">${restPct.toFixed(1)}%</td>
+        <td class="num col-detail">0</td><td class="num col-detail">0</td><td class="num">0</td><td></td></tr>` : "");
   }
 
   function renderMeta() {

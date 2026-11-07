@@ -164,3 +164,35 @@ table.results { width: 100%; border-collapse: collapse; font-size: 14px; }
 }
 .tooltip strong { display: block; margin-bottom: 2px; }
 .tooltip .tt-row { color: var(--ink-2); }
+
+/* Seats in Parliament */
+.house-wrap { position: relative; padding-top: 22px; margin-bottom: 8px; }
+.house-key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--ink-2); margin-bottom: 16px; }
+.house-key span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.house-key strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.house { position: relative; height: 32px; display: flex; border-radius: 6px; overflow: hidden; background: var(--track); }
+.house-seg { height: 100%; flex: none; box-shadow: inset -2px 0 0 var(--surface); cursor: default; outline: none; }
+.house-seg:last-child { box-shadow: none; }
+.house-seg:hover, .house-seg:focus-visible { filter: brightness(1.12); }
+.house-seg:focus-visible { box-shadow: inset 0 0 0 2px var(--ink); }
+.house-mid { position: absolute; left: 50%; top: 0; bottom: -4px; border-left: 2px dashed var(--ink-2); pointer-events: none; }
+.house-mid span { position: absolute; top: 0; left: 6px; font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.blocs { display: grid; gap: 10px; margin-bottom: 14px; }
+.bloc-head { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; margin-bottom: 4px; flex-wrap: wrap; }
+.bloc-name { color: var(--ink); font-weight: 600; }
+.bloc-parties { color: var(--ink-3); font-weight: 400; }
+.bloc-total { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.bloc-total strong { color: var(--ink); }
+.bloc-track { position: relative; height: 14px; display: flex; }
+.bloc-seg { height: 100%; flex: none; box-shadow: inset -2px 0 0 var(--surface); }
+.bloc-seg:last-of-type { border-radius: 0 4px 4px 0; box-shadow: none; }
+.bloc-line { position: absolute; top: -3px; bottom: -3px; border-left: 2px dashed var(--ink-2); }
+.bloc-others { font-size: 12px; color: var(--ink-3); }
+.parl-table .th { display: block; padding: 8px 6px; }
+.parl-table td.num { font-variant-numeric: tabular-nums; }
+.parl-table .p-name { display: flex; align-items: center; gap: 8px; font-weight: 550; }
+.parl-table .p-total { font-weight: 650; }
+.parl-table tr.muted td { color: var(--ink-3); }
+.chg { font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.card-note { color: var(--ink-3); font-size: 12px; margin-top: 10px; }
+@media (max-width: 600px) { .parl-table .col-detail { display: none; } }
