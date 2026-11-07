@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:03:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:05:05.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -538,14 +538,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northcote",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.8,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Dan Bidois",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 3065
+   "margin": 3064
   },
   {
    "id": 33,
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:03:59Z"
+ "scrapedAt": "2026-11-07T13:05:59Z"
 }

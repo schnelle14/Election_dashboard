@@ -1,11 +1,11 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results",
- "sourceUpdatedAt": "2026-11-07T13:00:05.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:05:05.000Z",
  "percentCounted": 99.7,
  "totalSeats": 131,
  "majority": 66,
  "overhangSeats": 11,
- "totalPartyVotes": 2417460,
+ "totalPartyVotes": 2417470,
  "parties": [
   {
    "id": 16,
@@ -13,7 +13,7 @@
    "short": "NAT",
    "colour": "#1E99EA",
    "seatingOrder": 100,
-   "partyVotes": 706458,
+   "partyVotes": 706461,
    "percentPartyVotes": 29.22,
    "percentPartyVotesChange": -8.86,
    "seatsElectorate": 42,
@@ -28,7 +28,7 @@
    "short": "LAB",
    "colour": "#EE2C3A",
    "seatingOrder": 10,
-   "partyVotes": 709920,
+   "partyVotes": 709923,
    "percentPartyVotes": 29.36,
    "percentPartyVotesChange": 2.4499999999999993,
    "seatsElectorate": 21,
@@ -43,7 +43,7 @@
    "short": "GRE",
    "colour": "#2BA53E",
    "seatingOrder": 20,
-   "partyVotes": 321716,
+   "partyVotes": 321718,
    "percentPartyVotes": 13.3,
    "percentPartyVotesChange": 1.700000000000001,
    "seatsElectorate": 2,
@@ -58,7 +58,7 @@
    "short": "ACT",
    "colour": "#EE2796",
    "seatingOrder": 90,
-   "partyVotes": 264033,
+   "partyVotes": 264034,
    "percentPartyVotes": 10.92,
    "percentPartyVotesChange": 2.2799999999999994,
    "seatsElectorate": 1,
@@ -88,7 +88,7 @@
    "short": "OPP",
    "colour": "#00B9BC",
    "seatingOrder": 70,
-   "partyVotes": 144258,
+   "partyVotes": 144259,
    "percentPartyVotes": 5.96,
    "percentPartyVotesChange": 3.7399999999999998,
    "seatsElectorate": 0,
@@ -263,5 +263,5 @@
    "isShownByDefault": false
   }
  ],
- "scrapedAt": "2026-11-07T13:01:59Z"
+ "scrapedAt": "2026-11-07T13:06:00Z"
 }
