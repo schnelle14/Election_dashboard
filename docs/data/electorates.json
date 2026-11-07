@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T10:35:31.000Z",
+ "sourceUpdatedAt": "2026-11-07T10:37:31.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -10,7 +10,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/auckland-central",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 84.6,
+   "percentCounted": 85.6,
    "status": "counting",
    "candidate": "Chlöe Swarbrick",
    "party": "Greens",
@@ -58,14 +58,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/christchurch-central",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.5,
+   "percentCounted": 98.4,
    "status": "counting",
    "candidate": "George Hampton",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 2590
+   "margin": 2604
   },
   {
    "id": 5,
@@ -186,8 +186,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hamilton-east",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.2,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Ryan Hamilton",
    "party": "National",
    "partyShort": "NAT",
@@ -218,14 +218,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hauraki-waikato",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 93.3,
+   "percentCounted": 93.6,
    "status": "counting",
    "candidate": "Hana-Rawhiti Maipi-Clarke",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 10172
+   "margin": 10202
   },
   {
    "id": 14,
@@ -410,14 +410,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/mt-albert",
    "isKey": true,
    "isMaori": false,
-   "percentCounted": 78.4,
+   "percentCounted": 79.4,
    "status": "counting",
    "candidate": "Helen White",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 3859
+   "margin": 3761
   },
   {
    "id": 26,
@@ -474,14 +474,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/napier",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 96.7,
+   "percentCounted": 97.8,
    "status": "counting",
    "candidate": "Katie Nimon",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 6830
+   "margin": 6843
   },
   {
    "id": 29,
@@ -698,14 +698,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/selwyn",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.0,
+   "percentCounted": 99.0,
    "status": "counting",
    "candidate": "Nicola Grigg",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 13918
+   "margin": 13926
   },
   {
    "id": 44,
@@ -810,14 +810,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-hauauru",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 95.7,
+   "percentCounted": 95.9,
    "status": "counting",
    "candidate": "Debbie Ngarewa-Packer",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 3770
+   "margin": 3787
   },
   {
    "id": 69,
@@ -826,14 +826,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 91.1,
+   "percentCounted": 91.3,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 463
+   "margin": 462
   },
   {
    "id": 70,
@@ -858,14 +858,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tukituki",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 95.7,
+   "percentCounted": 96.7,
    "status": "counting",
    "candidate": "Catherine Wedd",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 8788
+   "margin": 8797
   },
   {
    "id": 47,
@@ -890,14 +890,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki-makaurau",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 88.0,
+   "percentCounted": 88.2,
    "status": "counting",
    "candidate": "Oriini Kaipara",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 6666
+   "margin": 6676
   },
   {
    "id": 52,
@@ -922,14 +922,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waiariki",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 98.0,
+   "percentCounted": 98.4,
    "status": "counting",
    "candidate": "Rawiri Waititi",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 2248
+   "margin": 2246
   },
   {
    "id": 53,
@@ -1002,14 +1002,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/waitakere",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 82.0,
+   "percentCounted": 82.8,
    "status": "counting",
    "candidate": "Vanushi Walters",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 2551
+   "margin": 2555
   },
   {
    "id": 58,
@@ -1130,15 +1130,15 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/otahuhu",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 81.3,
+   "percentCounted": 82.4,
    "status": "counting",
    "candidate": "Jenny Salesa",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 9416
+   "margin": 9430
   }
  ],
- "scrapedAt": "2026-11-07T10:35:59Z"
+ "scrapedAt": "2026-11-07T10:37:58Z"
 }
