@@ -1,11 +1,11 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results",
- "sourceUpdatedAt": "2026-11-07T11:57:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T11:58:05.000Z",
  "percentCounted": 98.9,
  "totalSeats": 131,
  "majority": 66,
  "overhangSeats": 11,
- "totalPartyVotes": 2407551,
+ "totalPartyVotes": 2407601,
  "parties": [
   {
    "id": 16,
@@ -13,7 +13,7 @@
    "short": "NAT",
    "colour": "#1E99EA",
    "seatingOrder": 100,
-   "partyVotes": 704428,
+   "partyVotes": 704429,
    "percentPartyVotes": 29.25,
    "percentPartyVotesChange": -8.829999999999998,
    "seatsElectorate": 42,
@@ -28,7 +28,7 @@
    "short": "LAB",
    "colour": "#EE2C3A",
    "seatingOrder": 10,
-   "partyVotes": 705820,
+   "partyVotes": 705853,
    "percentPartyVotes": 29.31,
    "percentPartyVotesChange": 2.3999999999999986,
    "seatsElectorate": 21,
@@ -43,7 +43,7 @@
    "short": "GRE",
    "colour": "#2BA53E",
    "seatingOrder": 20,
-   "partyVotes": 320392,
+   "partyVotes": 320402,
    "percentPartyVotes": 13.3,
    "percentPartyVotesChange": 1.700000000000001,
    "seatsElectorate": 2,
@@ -73,7 +73,7 @@
    "short": "NZF",
    "colour": "#908F8F",
    "seatingOrder": 80,
-   "partyVotes": 235377,
+   "partyVotes": 235378,
    "percentPartyVotes": 9.77,
    "percentPartyVotesChange": 3.6899999999999995,
    "seatsElectorate": 0,
@@ -103,7 +103,7 @@
    "short": "TPM",
    "colour": "#A40808",
    "seatingOrder": 30,
-   "partyVotes": 13718,
+   "partyVotes": 13721,
    "percentPartyVotes": 0.56,
    "percentPartyVotesChange": -2.52,
    "seatsElectorate": 5,
@@ -118,7 +118,7 @@
    "short": "ALC",
    "colour": "#BBBBBB",
    "seatingOrder": 50,
-   "partyVotes": 4786,
+   "partyVotes": 4787,
    "percentPartyVotes": 0.19,
    "percentPartyVotesChange": -0.26,
    "seatsElectorate": 0,
@@ -208,7 +208,7 @@
    "short": "VNZ",
    "colour": "#BBBBBB",
    "seatingOrder": 50,
-   "partyVotes": 1515,
+   "partyVotes": 1516,
    "percentPartyVotes": 0.06,
    "percentPartyVotesChange": null,
    "seatsElectorate": 0,
@@ -263,5 +263,5 @@
    "isShownByDefault": false
   }
  ],
- "scrapedAt": "2026-11-07T11:58:00Z"
+ "scrapedAt": "2026-11-07T11:59:59Z"
 }
