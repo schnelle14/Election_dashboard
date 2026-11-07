@@ -1,9 +1,10 @@
 name: Scrape RNZ electorate results
 
-# GitHub cron can't run more often than every 5 minutes (and is often late),
-# so each run loops internally, scraping every 2 minutes for ~58 minutes.
-# The hourly schedule starts the next run; the concurrency group queues it
-# behind the current one, so coverage is continuous.
+# GitHub cron can't run more often than every 5 minutes, and it is often late
+# or skipped, so each run loops internally, scraping every 2 minutes for up to
+# ~5h50m (jobs are capped at 6h). When a run reaches its time limit while
+# results are still changing, it starts the next run itself. The hourly
+# schedule is only a backup. The concurrency group keeps one run at a time.
 on:
   schedule:
     - cron: "7 * * * *"
@@ -11,13 +12,14 @@ on:
     inputs:
       duration_minutes:
         description: "How long to keep scraping (max ~350)"
-        default: "58"
+        default: "350"
       interval_seconds:
         description: "Seconds between scrapes"
         default: "120"
 
 permissions:
   contents: write
+  actions: write   # lets a finished run start the next one
 
 concurrency:
   group: scrape-rnz
@@ -38,9 +40,22 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Scrape every 2 minutes
+        id: loop
         env:
           INTERVAL_SECONDS: ${{ inputs.interval_seconds || '120' }}
-          DURATION_MINUTES: ${{ inputs.duration_minutes || '58' }}
+          DURATION_MINUTES: ${{ inputs.duration_minutes || '350' }}
           # Stop early once counting goes quiet, to save Actions minutes.
           IDLE_MINUTES: ${{ vars.IDLE_MINUTES || '30' }}
         run: bash scraper/run_loop.sh
+
+      # Self-chaining: only when the run hit its time limit (results still
+      # moving). Idle or failed runs stop; the hourly schedule is a backup.
+      - name: Start the next run
+        if: steps.loop.outputs.ended == 'duration' && vars.SCRAPE_ENABLED != 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEXT_DURATION: ${{ inputs.duration_minutes || '350' }}
+          NEXT_INTERVAL: ${{ inputs.interval_seconds || '120' }}
+        run: |
+          gh workflow run scrape.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+            -f duration_minutes="$NEXT_DURATION" -f interval_seconds="$NEXT_INTERVAL"
