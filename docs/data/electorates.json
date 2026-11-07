@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:45:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:46:50.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -378,14 +378,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/manurewa",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 91.9,
+   "percentCounted": 92.9,
    "status": "counting",
    "candidate": "Arena Williams",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 10827
+   "margin": 10838
   },
   {
    "id": 24,
@@ -1098,14 +1098,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/whangarei",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.7,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Lloyd Budd",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1061
+   "margin": 1092
   },
   {
    "id": 64,
@@ -1130,15 +1130,15 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/otahuhu",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 96.7,
+   "percentCounted": 97.8,
    "status": "counting",
    "candidate": "Jenny Salesa",
    "party": "Labour",
    "partyShort": "LAB",
    "colour": "#EE2C3A",
    "isIndependent": false,
-   "margin": 10498
+   "margin": 10522
   }
  ],
- "scrapedAt": "2026-11-07T12:46:00Z"
+ "scrapedAt": "2026-11-07T12:47:59Z"
 }
