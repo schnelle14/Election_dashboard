@@ -29,8 +29,8 @@ while :; do
     failures=0
     last_change=$started
     if [ "$PUSH" = "1" ]; then
-      git add "$OUT"
-      git commit -q -m "Update electorate results ($(date -u +%H:%MZ))" || true
+      git add docs/data/
+      git commit -q -m "Update election results ($(date -u +%H:%MZ))" || true
       for attempt in 1 2 3 4; do
         git pull -q --rebase -X theirs origin "$(git branch --show-current)" && git push -q && break
         sleep $(( 2 ** attempt ))

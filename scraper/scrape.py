@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Scrape RNZ's Election 2026 electorate results into a JSON file.
+"""Scrape RNZ's Election 2026 results (electorates + Parliament seats) into JSON.
 
 The RNZ page is a Next.js app. Its server-rendered HTML embeds the page data
 in `self.__next_f.push([1, "..."])` "flight" chunks, which contain a clean
@@ -9,7 +9,11 @@ the rendered HTML table if RNZ changes the embedded format.
 Standard library only, so it runs on a bare GitHub Actions runner.
 
 Usage:
-    python3 scraper/scrape.py [--out docs/data/electorates.json] [--html FILE]
+    python3 scraper/scrape.py [--out docs/data/electorates.json]
+                              [--parliament-out docs/data/parliament.json]
+
+Writes the electorate leads from the electorates page, plus party-vote
+shares and projected seats in Parliament from the results front page.
 
 Exit codes: 0 = data changed and was written, 3 = no change, 1 = error.
 """
@@ -28,6 +32,7 @@ import urllib.request
 from datetime import datetime, timezone
 
 SOURCE_URL = "https://www.rnz.co.nz/news/election-2026-results/electorates"
+PARLIAMENT_URL = "https://www.rnz.co.nz/news/election-2026-results"
 RNZ_BASE = "https://www.rnz.co.nz"
 USER_AGENT = "Mozilla/5.0 (compatible; election-dashboard/1.0; +https://github.com/schnelle14/Election_dashboard)"
 MIN_ELECTORATES = 60  # sanity floor: NZ has 71 electorates in 2026
@@ -64,25 +69,26 @@ def _flight_payload(page: str) -> str:
     return "".join(json.loads('"' + c + '"') for c in chunks)
 
 
-def _resolve_refs(node, root: list, depth: int = 0):
-    """Resolve React Server Component back-references within the array.
+def _resolve_refs(node, root: list, key: str = "electorates", depth: int = 0):
+    """Resolve React Server Component back-references within an array.
 
     RSC dedupes repeated objects (e.g. the same party for many rows) into
     strings like "$28:props:children:props:electorates:2:leader:party",
     meaning "same value as electorates[2].leader.party". We resolve the part
-    after the last ":electorates:" segment against the array itself.
+    after the last ":<key>:" segment against the array itself.
     """
     if depth > 20:
         raise ValueError("RSC reference cycle")
     if isinstance(node, dict):
-        return {k: _resolve_refs(v, root, depth) for k, v in node.items()}
+        return {k: _resolve_refs(v, root, key, depth) for k, v in node.items()}
     if isinstance(node, list):
-        return [_resolve_refs(v, root, depth) for v in node]
-    if isinstance(node, str) and node.startswith("$") and ":electorates:" in node:
+        return [_resolve_refs(v, root, key, depth) for v in node]
+    marker = f":{key}:"
+    if isinstance(node, str) and node.startswith("$") and marker in node:
         target = root
-        for seg in node.rsplit(":electorates:", 1)[1].split(":"):
+        for seg in node.rsplit(marker, 1)[1].split(":"):
             target = target[int(seg)] if isinstance(target, list) else target[seg]
-        return _resolve_refs(target, root, depth + 1)
+        return _resolve_refs(target, root, key, depth + 1)
     return node
 
 
@@ -187,6 +193,70 @@ def parse_html(page: str) -> tuple[list[dict], str | None]:
 
 
 # --------------------------------------------------------------------------
+# Parliament: party vote and projected seats (RNZ results front page)
+# --------------------------------------------------------------------------
+
+def parse_parliament(page: str) -> dict:
+    flight = _flight_payload(page)
+    if not flight:
+        raise ValueError("no Next.js flight payload found")
+    dec = json.JSONDecoder()
+    summary = None
+    for m in re.finditer(r'"summary":', flight):
+        try:
+            obj, _ = dec.raw_decode(flight, m.end())
+        except ValueError:
+            continue
+        if isinstance(obj, dict) and isinstance(obj.get("parties"), list) and "totalSeats" in obj:
+            summary = obj
+            break
+    if summary is None:
+        raise ValueError("no party summary in flight payload")
+
+    raw = _resolve_refs(summary["parties"], summary["parties"], key="parties")
+    parties = []
+    for p in raw:
+        if not isinstance(p, dict):
+            raise ValueError(f"unresolved party entry: {p!r}")
+        parties.append({
+            "id": p.get("id"),
+            "name": p.get("displayName") or "",
+            "short": p.get("shortDisplayName") or "",
+            "colour": p.get("colour") or "#888888",
+            "seatingOrder": p.get("seatingOrder"),
+            "partyVotes": int(p.get("partyVotes") or 0),
+            "percentPartyVotes": float(p.get("percentPartyVotes") or 0),
+            "percentPartyVotesChange": p.get("percentPartyVotesChange"),
+            "seatsElectorate": int(p.get("seatsElectorate") or 0),
+            "seatsList": int(p.get("seatsList") or 0),
+            "seatsTotal": int(p.get("seatsTotal") or 0),
+            "seatsChange": p.get("seatsChange"),
+            "isShownByDefault": bool(p.get("isShownByDefault")),
+        })
+
+    total = int(summary.get("totalSeats") or 0)
+    seated = sum(p["seatsTotal"] for p in parties)
+    if not (110 <= total <= 150):
+        raise ValueError(f"implausible total seats {total}")
+    if seated != total:
+        raise ValueError(f"party seats add to {seated}, not {total}")
+    if sum(p["seatsTotal"] > 0 for p in parties) < 3:
+        raise ValueError("fewer than 3 parties with seats")
+
+    parties.sort(key=lambda p: (-p["seatsTotal"], -p["percentPartyVotes"], p["name"]))
+    return {
+        "source": PARLIAMENT_URL,
+        "sourceUpdatedAt": summary.get("updatedAt"),
+        "percentCounted": summary.get("percentCounted"),
+        "totalSeats": total,
+        "majority": int(summary.get("majority") or (total // 2 + 1)),
+        "overhangSeats": int(summary.get("overhangSeats") or 0),
+        "totalPartyVotes": int(summary.get("totalPartyVotes") or 0),
+        "parties": parties,
+    }
+
+
+# --------------------------------------------------------------------------
 
 def scrape(page: str) -> dict:
     method = "flight"
@@ -214,46 +284,68 @@ def scrape(page: str) -> dict:
     }
 
 
-def _comparable(doc: dict) -> str:
+def _comparable_electorates(doc: dict) -> str:
     # Only the results themselves count as a change: RNZ's page timestamp
     # ticks over even when no numbers move, which would otherwise create a
     # commit every cycle and defeat the idle cut-off.
     return json.dumps(doc.get("electorates"), sort_keys=True, ensure_ascii=False)
 
 
+def _comparable_parliament(doc: dict) -> str:
+    return json.dumps({k: v for k, v in doc.items() if k not in ("sourceUpdatedAt", "scrapedAt")},
+                      sort_keys=True, ensure_ascii=False)
+
+
+def write_if_changed(path: str, doc: dict, comparable) -> bool:
+    """Write doc to path (atomically) unless its results are unchanged."""
+    if os.path.exists(path):
+        try:
+            if comparable(json.load(open(path, encoding="utf-8"))) == comparable(doc):
+                return False
+        except ValueError:
+            pass
+    doc["scrapedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path) or ".", suffix=".json")
+    with os.fdopen(fd, "w", encoding="utf-8") as fh:
+        json.dump(doc, fh, ensure_ascii=False, indent=1)
+        fh.write("\n")
+    os.replace(tmp, path)
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--out", default="docs/data/electorates.json")
-    ap.add_argument("--html", help="parse a saved HTML file instead of fetching (for testing)")
+    ap.add_argument("--parliament-out", default="docs/data/parliament.json")
+    ap.add_argument("--html", help="parse a saved electorates page instead of fetching (testing)")
+    ap.add_argument("--parliament-html", help="parse a saved results page instead of fetching (testing)")
     args = ap.parse_args()
 
+    # Electorates are the core data: a failure here is an error.
     try:
         page = open(args.html, encoding="utf-8").read() if args.html else fetch(SOURCE_URL)
         doc = scrape(page)
     except Exception as err:  # noqa: BLE001
-        print(f"error: {err}", file=sys.stderr)
+        print(f"error: electorates: {err}", file=sys.stderr)
         return EXIT_ERROR
+    changed = write_if_changed(args.out, doc, _comparable_electorates)
+    print(f"electorates: {'updated' if changed else 'no change'} "
+          f"({len(doc['electorates'])} via {doc['parser']}, RNZ updated {doc['sourceUpdatedAt']})")
 
-    old = None
-    if os.path.exists(args.out):
-        try:
-            old = json.load(open(args.out, encoding="utf-8"))
-        except ValueError:
-            old = None
-    if old is not None and _comparable(old) == _comparable(doc):
-        print(f"no change ({len(doc['electorates'])} electorates, RNZ updated {doc['sourceUpdatedAt']})")
-        return EXIT_UNCHANGED
+    # Parliament seats are a second page: warn but keep electorates flowing.
+    try:
+        ppage = (open(args.parliament_html, encoding="utf-8").read() if args.parliament_html
+                 else fetch(PARLIAMENT_URL))
+        pdoc = parse_parliament(ppage)
+        pchanged = write_if_changed(args.parliament_out, pdoc, _comparable_parliament)
+        print(f"parliament: {'updated' if pchanged else 'no change'} "
+              f"({pdoc['totalSeats']} seats, {pdoc['percentCounted']}% counted, RNZ updated {pdoc['sourceUpdatedAt']})")
+        changed = changed or pchanged
+    except Exception as err:  # noqa: BLE001
+        print(f"::warning::parliament seats not updated: {err}", file=sys.stderr)
 
-    doc["scrapedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(args.out) or ".", suffix=".json")
-    with os.fdopen(fd, "w", encoding="utf-8") as fh:
-        json.dump(doc, fh, ensure_ascii=False, indent=1)
-        fh.write("\n")
-    os.replace(tmp, args.out)
-    print(f"updated {args.out}: {len(doc['electorates'])} electorates via {doc['parser']}, "
-          f"RNZ updated {doc['sourceUpdatedAt']}")
-    return EXIT_CHANGED
+    return EXIT_CHANGED if changed else EXIT_UNCHANGED
 
 
 if __name__ == "__main__":
