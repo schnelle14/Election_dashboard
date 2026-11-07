@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:15:21.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:19:20.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -10,7 +10,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/auckland-central",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.1,
+   "percentCounted": 98.1,
    "status": "counting",
    "candidate": "Chlöe Swarbrick",
    "party": "Greens",
@@ -122,14 +122,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/east-cape",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.2,
+   "percentCounted": 99.1,
    "status": "counting",
    "candidate": "Dana Kirkpatrick",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 5365
+   "margin": 5349
   },
   {
    "id": 9,
@@ -154,7 +154,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/epsom",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 97.2,
+   "percentCounted": 98.1,
    "status": "counting",
    "candidate": "David Seymour",
    "party": "ACT",
@@ -1140,5 +1140,5 @@
    "margin": 10498
   }
  ],
- "scrapedAt": "2026-11-07T12:15:59Z"
+ "scrapedAt": "2026-11-07T12:19:59Z"
 }

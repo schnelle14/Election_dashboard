@@ -1,11 +1,11 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results",
- "sourceUpdatedAt": "2026-11-07T12:15:21.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:19:20.000Z",
  "percentCounted": 99.1,
  "totalSeats": 131,
  "majority": 66,
  "overhangSeats": 11,
- "totalPartyVotes": 2410007,
+ "totalPartyVotes": 2410053,
  "parties": [
   {
    "id": 16,
@@ -13,7 +13,7 @@
    "short": "NAT",
    "colour": "#1E99EA",
    "seatingOrder": 100,
-   "partyVotes": 704892,
+   "partyVotes": 704894,
    "percentPartyVotes": 29.24,
    "percentPartyVotesChange": -8.84,
    "seatsElectorate": 42,
@@ -28,7 +28,7 @@
    "short": "LAB",
    "colour": "#EE2C3A",
    "seatingOrder": 10,
-   "partyVotes": 706989,
+   "partyVotes": 707014,
    "percentPartyVotes": 29.33,
    "percentPartyVotesChange": 2.419999999999998,
    "seatsElectorate": 21,
@@ -43,7 +43,7 @@
    "short": "GRE",
    "colour": "#2BA53E",
    "seatingOrder": 20,
-   "partyVotes": 320714,
+   "partyVotes": 320718,
    "percentPartyVotes": 13.3,
    "percentPartyVotesChange": 1.700000000000001,
    "seatsElectorate": 2,
@@ -58,7 +58,7 @@
    "short": "ACT",
    "colour": "#EE2796",
    "seatingOrder": 90,
-   "partyVotes": 263460,
+   "partyVotes": 263462,
    "percentPartyVotes": 10.93,
    "percentPartyVotesChange": 2.289999999999999,
    "seatsElectorate": 1,
@@ -73,7 +73,7 @@
    "short": "NZF",
    "colour": "#908F8F",
    "seatingOrder": 80,
-   "partyVotes": 235613,
+   "partyVotes": 235624,
    "percentPartyVotes": 9.77,
    "percentPartyVotesChange": 3.6899999999999995,
    "seatsElectorate": 0,
@@ -88,7 +88,7 @@
    "short": "OPP",
    "colour": "#00B9BC",
    "seatingOrder": 70,
-   "partyVotes": 143972,
+   "partyVotes": 143973,
    "percentPartyVotes": 5.97,
    "percentPartyVotesChange": 3.7499999999999996,
    "seatsElectorate": 0,
@@ -103,7 +103,7 @@
    "short": "TPM",
    "colour": "#A40808",
    "seatingOrder": 30,
-   "partyVotes": 13762,
+   "partyVotes": 13763,
    "percentPartyVotes": 0.57,
    "percentPartyVotesChange": -2.5100000000000002,
    "seatsElectorate": 5,
@@ -263,5 +263,5 @@
    "isShownByDefault": false
   }
  ],
- "scrapedAt": "2026-11-07T12:16:00Z"
+ "scrapedAt": "2026-11-07T12:20:00Z"
 }
