@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T13:10:50.000Z",
+ "sourceUpdatedAt": "2026-11-07T13:13:20.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -138,8 +138,8 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/east-coast-bays",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.9,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Erica Stanford",
    "party": "National",
    "partyShort": "NAT",
@@ -554,14 +554,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/northland",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 98.0,
+   "percentCounted": 98.6,
    "status": "counting",
    "candidate": "Grant McCallum",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 8068
+   "margin": 7931
   },
   {
    "id": 35,
@@ -746,14 +746,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/takanini",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 99.0,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Rima Nakhle",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1484
+   "margin": 1487
   },
   {
    "id": 48,
@@ -1140,5 +1140,5 @@
    "margin": 10558
   }
  ],
- "scrapedAt": "2026-11-07T13:12:00Z"
+ "scrapedAt": "2026-11-07T13:14:00Z"
 }
