@@ -7,7 +7,16 @@
 #   DURATION_MINUTES  how long to keep looping           (default 58)
 #   IDLE_MINUTES      stop early if nothing changed for this long (default 0 = never)
 #   PUSH              set to 0 to skip git commit/push (local testing)
+#
+# On GitHub Actions the reason the loop stopped is written to $GITHUB_OUTPUT
+# as ended=duration|idle|failed, so the workflow can start the next run only
+# when results were still changing.
 set -uo pipefail
+
+finish() {  # finish <reason> <exit-code>
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then echo "ended=$1" >> "$GITHUB_OUTPUT"; fi
+  exit "$2"
+}
 
 INTERVAL_SECONDS="${INTERVAL_SECONDS:-120}"
 DURATION_MINUTES="${DURATION_MINUTES:-58}"
@@ -43,19 +52,19 @@ while :; do
     echo "::warning::scrape failed (${failures} in a row)"
     if [ "$failures" -ge 5 ]; then
       echo "::error::5 consecutive scrape failures; stopping"
-      exit 1
+      finish failed 1
     fi
   fi
 
   now=$(date +%s)
   if [ "$IDLE_MINUTES" -gt 0 ] && [ $(( now - last_change )) -ge $(( IDLE_MINUTES * 60 )) ]; then
     echo "No changes for ${IDLE_MINUTES} min; stopping early to save Actions minutes."
-    exit 0
+    finish idle 0
   fi
   next=$(( started + INTERVAL_SECONDS ))
   if [ "$next" -ge "$end" ]; then
     echo "Reached ${DURATION_MINUTES} min run duration."
-    exit 0
+    finish duration 0
   fi
   sleep $(( next - now > 0 ? next - now : 0 ))
 done

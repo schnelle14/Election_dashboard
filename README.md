@@ -37,9 +37,11 @@ RNZ pages ─(every 2 min)─> GitHub Action ──commit──> docs/data/*.jso
 - `scraper/run_loop.sh` runs the scraper every 2 minutes and commits only when
   the results actually change.
 - `.github/workflows/scrape.yml` runs that loop. GitHub's cron schedule can't
-  run more often than every 5 minutes, so each run loops for about 58 minutes,
-  and an hourly schedule queues the next run. The result is continuous 2-minute
-  updates.
+  run more often than every 5 minutes and is often late or skipped, so each run
+  loops for up to ~5h50m (jobs are capped at 6h). When a run hits that limit
+  while results are still changing, it starts the next run itself; the hourly
+  schedule is only a backup. A run that goes idle (no changes for 30 min) or
+  keeps failing stops without restarting.
 - `docs/` is the static dashboard (`index.html`, `app.js`, `style.css`). It
   fetches `data/electorates.json` every 2 minutes, bypassing the cache.
 
