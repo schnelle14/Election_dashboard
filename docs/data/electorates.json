@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T12:13:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T12:15:21.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -778,14 +778,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/taupo",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 99.0,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Louise Upston",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 13050
+   "margin": 13052
   },
   {
    "id": 50,
@@ -810,14 +810,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-hauauru",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 99.8,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Debbie Ngarewa-Packer",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 3832
+   "margin": 3841
   },
   {
    "id": 69,
@@ -1140,5 +1140,5 @@
    "margin": 10498
   }
  ],
- "scrapedAt": "2026-11-07T12:13:59Z"
+ "scrapedAt": "2026-11-07T12:15:59Z"
 }
