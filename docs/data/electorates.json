@@ -1,6 +1,6 @@
 {
  "source": "https://www.rnz.co.nz/news/election-2026-results/electorates",
- "sourceUpdatedAt": "2026-11-07T11:45:20.000Z",
+ "sourceUpdatedAt": "2026-11-07T11:47:05.000Z",
  "parser": "flight",
  "electorates": [
   {
@@ -218,14 +218,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/hauraki-waikato",
    "isKey": false,
    "isMaori": true,
-   "percentCounted": 99.7,
-   "status": "counting",
+   "percentCounted": 100.0,
+   "status": "final",
    "candidate": "Hana-Rawhiti Maipi-Clarke",
    "party": "Te Pāti Māori",
    "partyShort": "TPM",
    "colour": "#A40808",
    "isIndependent": false,
-   "margin": 10435
+   "margin": 10441
   },
   {
    "id": 14,
@@ -442,7 +442,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/mt-roskill",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 95.0,
+   "percentCounted": 96.0,
    "status": "counting",
    "candidate": "Michael Wood",
    "party": "Labour",
@@ -746,14 +746,14 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/takanini",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 94.2,
+   "percentCounted": 95.2,
    "status": "counting",
    "candidate": "Rima Nakhle",
    "party": "National",
    "partyShort": "NAT",
    "colour": "#1E99EA",
    "isIndependent": false,
-   "margin": 1541
+   "margin": 1509
   },
   {
    "id": 48,
@@ -826,7 +826,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/te-tai-tokerau",
    "isKey": true,
    "isMaori": true,
-   "percentCounted": 97.5,
+   "percentCounted": 97.7,
    "status": "counting",
    "candidate": "Aperahama Edwards",
    "party": "Te Pāti Māori",
@@ -874,7 +874,7 @@
    "url": "https://www.rnz.co.nz/news/election-2026-results/electorate/tamaki",
    "isKey": false,
    "isMaori": false,
-   "percentCounted": 95.1,
+   "percentCounted": 96.3,
    "status": "counting",
    "candidate": "Mahesh Muralidhar",
    "party": "National",
@@ -1140,5 +1140,5 @@
    "margin": 10035
   }
  ],
- "scrapedAt": "2026-11-07T11:46:00Z"
+ "scrapedAt": "2026-11-07T11:48:00Z"
 }
