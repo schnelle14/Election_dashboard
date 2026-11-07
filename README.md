@@ -15,6 +15,10 @@ A self-updating dashboard of the electorate results published by RNZ at
   allowance for special votes counted later). Tune `CLOSE_SWING`,
   `CLOSE_FLOOR` and `EST_VOTES_PER_ELECTORATE` in `docs/app.js`.
 - **Key** electorates are RNZ's own selection of seats to watch
+- **Feels live**: bars glide and numbers roll to new values, changes flash green/red,
+  cards rise in on load, a pulsing LIVE pill and a countdown ring show the next check,
+  and a "New results" toast appears when data changes (all motion is off for
+  viewers with *reduce motion* set)
 - Highlights rows that changed since the last refresh and tags electorates whose leading party changed while the page was open
 
 ## How it works

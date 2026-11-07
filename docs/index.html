@@ -15,8 +15,13 @@
         <h1>Who's leading in each electorate</h1>
       </div>
       <div class="status" aria-live="polite">
-        <span class="dot" id="live-dot" aria-hidden="true"></span>
+        <span class="live-pill" id="live-pill"><span class="dot" id="live-dot" aria-hidden="true"></span><span id="live-label">Live</span></span>
+        <svg class="countdown" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
+          <circle class="countdown-track" cx="9" cy="9" r="7"/>
+          <circle class="countdown-arc" id="countdown-arc" cx="9" cy="9" r="7"/>
+        </svg>
         <span id="status-text">Loading…</span>
+        <span class="update-toast" id="update-toast" hidden>New results</span>
         <button type="button" id="refresh-btn" class="btn">Refresh now</button>
       </div>
     </div>
