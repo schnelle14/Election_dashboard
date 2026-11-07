@@ -3,11 +3,12 @@
 
   const DATA_URL = "data/electorates.json";
   const PARL_URL = "data/parliament.json";
-  // Blocs = the outgoing (2023-26) government and the opposition parties in
-  // that Parliament. Not a prediction of coalitions.
+  // Blocs = the outgoing (2023-26) government and opposition, plus a possible
+  // opposition + Opportunity grouping. Not predictions of coalitions.
   const BLOCS = [
     { name: "Outgoing government", parties: ["National", "ACT", "NZ First"] },
     { name: "Outgoing opposition", parties: ["Labour", "Greens", "Te Pāti Māori"] },
+    { name: "Opposition + Opportunity", parties: ["Labour", "Greens", "Te Pāti Māori", "Opportunity"], possible: true },
   ];
   const REFRESH_MS = 2 * 60 * 1000;
   // "Close" depends on how much is left to count: a lead is close if the
@@ -272,7 +273,7 @@
       const verdict = diff > 0 ? `majority, ${diff} to spare` : diff === 0 ? "bare majority" : `${-diff} short of a majority`;
       return `<div class="bloc">
         <div class="bloc-head">
-          <span><span class="bloc-name">${esc(b.name)}</span> <span class="bloc-parties">${esc(b.parties.join(" + "))}</span></span>
+          <span><span class="bloc-name">${esc(b.name)}</span>${b.possible ? ` <span class="bloc-tag">possible</span>` : ""} <span class="bloc-parties">${esc(b.parties.join(" + "))}</span></span>
           <span class="bloc-total"><strong data-k="blocn:${esc(b.name)}" data-n="${seats}" data-fmt="int">${seats}</strong> seats · ${verdict}</span>
         </div>
         <div class="bloc-track" role="img" aria-label="${esc(b.name)}: ${seats} seats, ${verdict}">
@@ -281,7 +282,7 @@
         </div>
       </div>`;
     }).join("") + (others.length
-      ? `<p class="bloc-others">Not in either bloc: ${others.map((p) => `${esc(p.name)} ${p.seatsTotal}`).join(", ")}</p>` : "");
+      ? `<p class="bloc-others">Not in any bloc: ${others.map((p) => `${esc(p.name)} ${p.seatsTotal}`).join(", ")}</p>` : "");
     });
 
     // Party table: parties with seats or shown by default, then the rest summed.

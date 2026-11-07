@@ -4,7 +4,7 @@ A self-updating dashboard of the electorate results published by RNZ at
 <https://www.rnz.co.nz/news/election-2026-results/electorates>.
 
 - **Seats in Parliament**: projected seats per party from the party vote (electorate + list),
-  a seat strip with the majority line, outgoing government vs opposition blocs, and party-vote %
+  a seat strip with the majority line, outgoing government vs opposition blocs (plus a possible opposition + Opportunity bloc), and party-vote %
 - **Leading candidate and margin** for all 71 electorates
 - **Party summary**: electorates led or won, by party (click a bar to filter the table)
 - **% of votes counted** per electorate, plus summary tiles (average counted, close races, closest race)
